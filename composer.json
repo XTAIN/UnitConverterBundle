@@ -1,8 +1,24 @@
 {
     "name": "xtain/unit-converter-bundle",
-    "autoload" : {
-        "psr-4" : {
-            "XTAIN\\Bundle\\UnitConverterBundle\\" : "/src"          
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "XTAIN\\Bundle\\UnitConverterBundle\\": ""
         }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.xtain.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "xtain/unit-converter": "dev-master",
+        "symfony/symfony": ">=2.6.*",
+        "sonata-project/intl-bundle": "^2.2"
+    },
+    "require-dev": {
     }
 }
