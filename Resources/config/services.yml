@@ -20,6 +20,6 @@ services:
         class: %xtain.unitconverterbundle.twig_extension.unit_formatter.class%
         public: false
         calls:
-            - [setConverter, [?@xtain.unitconverterbundle.service.unit_converter]]
+            - [setConverter, [@xtain.unitconverterbundle.service.unit_converter]]
         tags:
             - { name: twig.extension }
