@@ -1,5 +1,4 @@
 parameters:
-#    acme.demo.example.class: Acme\DemoBundle\Example
     xtain.unitconverterbundle.twig_extension.unit_formatter.class: XTAIN\Bundle\UnitConverterBundle\Twig\Extension\UnitFormatter
 
     xtain.unitconverterbundle.service.unit_converter.class: XTAIN\UnitConverter\UnitConverter
@@ -12,16 +11,6 @@ parameters:
         seamiles: 0.539957
 
 services:
-#    acme.demo.example:
-#        class: %acme.demo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-#        calls:
-#            - [setService, [@service_id]]
-#        tags:
-#            - { name: twig.extension }
-#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
-
-
     xtain.unitconverterbundle.service.unit_converter:
         class: %xtain.unitconverterbundle.service.unit_converter.class%
         arguments:
