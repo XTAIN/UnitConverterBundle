@@ -1,0 +1,25 @@
+parameters:
+    xtain.unitconverterbundle.twig_extension.unit_formatter.class: XTAIN\Bundle\UnitConverterBundle\Twig\Extension\UnitFormatter
+
+    xtain.unitconverterbundle.service.unit_converter.class: XTAIN\UnitConverter\UnitConverter
+
+    xtain.unitconverterbundle.service.unit_converter.variables:
+      kW:
+        PS: 1.359621617
+      km:
+        miles: 0.621371
+        seamiles: 0.539957
+
+services:
+    xtain.unitconverterbundle.service.unit_converter:
+        class: %xtain.unitconverterbundle.service.unit_converter.class%
+        arguments:
+            - %xtain.unitconverterbundle.service.unit_converter.variables%
+
+    xtain.unitconverterbundle.twig_extension.unit_formatter:
+        class: %xtain.unitconverterbundle.twig_extension.unit_formatter.class%
+        public: false
+        calls:
+            - [setConverter, [@xtain.unitconverterbundle.service.unit_converter]]
+        tags:
+            - { name: twig.extension }
